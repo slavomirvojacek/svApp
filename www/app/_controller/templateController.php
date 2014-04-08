@@ -43,9 +43,6 @@ class templateController
 
 			return true;
 		}
-		else {
-			goto err;
-		}
 
 		err:
 		{
@@ -83,9 +80,6 @@ class templateController
 			}
 
 			return true;
-		}
-		else {
-			goto err;
 		}
 
 		err:

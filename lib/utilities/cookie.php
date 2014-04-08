@@ -23,7 +23,7 @@ class Cookie
 
 	public function __construct()
 	{
-		$this->cookie = $_COOKIE;
+		$this->cookie = filter_input_array(INPUT_COOKIE, FILTER_SANITIZE_STRING);
 	}
 
 	/**

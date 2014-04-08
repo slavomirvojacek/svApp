@@ -17,7 +17,8 @@ class Url
 	 */
 	public static function returnBaseUrl()
 	{
-		return "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . "://{$_SERVER['HTTP_HOST']}";
+		$s = filter_input_array(INPUT_SERVER, FILTER_SANITIZE_STRING);
+		return "http" . (isset($s['HTTPS']) ? 's' : '') . "://{$s['HTTP_HOST']}";
 	}
 
 	/**
@@ -29,7 +30,8 @@ class Url
 	{
 		global $app;
 
-		$u = explode("/", $_SERVER["REQUEST_URI"], 4);
+		$s = filter_input_array(INPUT_SERVER, FILTER_SANITIZE_STRING);
+		$u = explode("/", $s["REQUEST_URI"], 4);
 
 		if (isset($u[3])) {
 			if (empty($u[3]) || empty($u[2]) || empty($u[1])) {

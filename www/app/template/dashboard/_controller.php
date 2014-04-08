@@ -25,14 +25,16 @@ final class controller extends Controller\userController
 		$this->template->formEditProfile = $this->form["editProfile"]->render();
 
 		if (Http::isRequest("execute")) {
-			$v = $this->form["editProfile"]->validate($_POST);
+			$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+			$v = $this->form["editProfile"]->validate($post);
 			$img = ($_FILES["profilePicture"]["size"] > 0) ? $_FILES["profilePicture"] : false;
 
 			if ($v === true) {
 				$this->template->alertEditProfile = User::update(array(
-										"Name" => array($_POST["name"], 2, 128),
-										"Email" => array($_POST["email"], 2, 128),
-										"Language" => array($_POST["language"], 1, 2),
+										"Name" => array($post["name"], 2, 128),
+										"Email" => array($post["email"], 2, 128),
+										"Language" => array($post["language"], 1, 2),
 												), $this->template->userData["ID"], $img);
 			}
 			else {

@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="/www/media/css/screen.<?php echo( DEBUG ? 'php' : 'css' ); ?>">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon-precomposed" href="/screen-icon.png">
+	<link rel="apple-touch-icon-precomposed" href="/screenIcon.png">
 
 	<script src="/www/media/js/jquery.js"></script>
 	<?php echo( (isset($template["page"]["scripts"]) && is_array($template["page"]["scripts"])) ? Template\jsCompile::compile($template["page"]["scripts"]) : ""
