@@ -1,0 +1,21 @@
+{?
+global $app;
+?}
+
+<footer class="container">
+
+	<p>&copy; {?= date("Y") =?}, <a href="{?= Template\Url::href(array(""), true) =?}">{{ app.siteName }}</a></p>
+
+</footer>
+
+{? if (GRID && DEBUG) { ?}
+  <script>
+		$(document).ready(function() {
+			$('body').prepend($('<div id="debug-grid" style="height: ' + $('body').outerHeight() + 'px"></div>'));
+
+			$('body').dblclick(function() {
+				$('#debug-grid').toggleClass("show");
+			});
+		});
+  </script>
+{? } ?}

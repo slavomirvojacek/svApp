@@ -1,0 +1,1 @@
+<?php Template\Template::getLayout(" param "); ?>
