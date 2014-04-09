@@ -7,6 +7,12 @@ use Utilities\appException;
 class Mail
 {
 
+	/**
+	 * Sends a message (see settings in config file)
+	 * @global array $app
+	 * @param array $d (message, name, email)
+	 * @return string
+	 */
 	public static function sendMessage(array $d)
 	{
 		global $app;
@@ -16,7 +22,7 @@ class Mail
 		$r = '<h1>New message from ' . $d["name"] . ':</h1>';
 		$r .= '<p>' . $d["message"] . '</p>';
 
-		if (self::send($to, $d["email"], $d["email"], "Message from " . $app["info"]["siteName"][$app["lang"]], $r) === true) {
+		if (self::send($to, $d["email"], $d["email"], "Message from " . $app["siteName"], $r) === true) {
 			return Alert::render("Your message has been successfully sent!", "alert success");
 		}
 		else {
@@ -24,6 +30,16 @@ class Mail
 		}
 	}
 
+	/**
+	 * Executes the mail function
+	 * @global array $app
+	 * @param string $t (to)
+	 * @param string $f (from email)
+	 * @param string $fn (from name)
+	 * @param string $s (subject)
+	 * @param string $b (body)
+	 * @return boolean
+	 */
 	public static function send($t, $f, $fn, $s, $b)
 	{
 		global $app;
@@ -1032,7 +1048,7 @@ class PHPMailer
 		else {
 			$params = sprintf("-f%s", $this->Sender);
 		}
-		if ($this->Sender != '' and !ini_get('safe_mode')) {
+		if ($this->Sender != '' and ! ini_get('safe_mode')) {
 			$old_from = ini_get('sendmail_from');
 			ini_set('sendmail_from', $this->Sender);
 		}
@@ -1220,7 +1236,7 @@ class PHPMailer
 		//If we get here, all connection attempts have failed, so close connection hard
 		$this->smtp->Close();
 		//As we've caught all exceptions, just report whatever the last one was
-		if ($this->exceptions and !is_null($lastexception)) {
+		if ($this->exceptions and ! is_null($lastexception)) {
 			throw $lastexception;
 		}
 		return false;
@@ -1363,7 +1379,7 @@ class PHPMailer
 			for ($e = 0; $e < count($line_part); $e++)
 			{
 				$word = $line_part[$e];
-				if ($qp_mode and (strlen($word) > $length)) {
+				if ($qp_mode and ( strlen($word) > $length)) {
 					$space_left = $length - strlen($buf) - $crlflen;
 					if ($e != 0) {
 						if ($space_left > 20) {
@@ -2579,7 +2595,7 @@ class PHPMailer
 	protected function SetError($msg)
 	{
 		$this->error_count++;
-		if ($this->Mailer == 'smtp' and !is_null($this->smtp)) {
+		if ($this->Mailer == 'smtp' and ! is_null($this->smtp)) {
 			$lasterror = $this->smtp->getError();
 			if (!empty($lasterror) and array_key_exists('smtp_msg', $lasterror)) {
 				$msg .= '<p>' . $this->Lang('smtp_error') . $lasterror['smtp_msg'] . "</p>\n";

@@ -1,5 +1,5 @@
 <div id="profilePictureHolder">
-	<?php echo( (!empty($template["userData"]["ProfilePicture"]) ? '<img src="/temp/data/_avatars/avatar-512/' . $template["userData"]["ProfilePicture"] . '" alt="Profile picture" />' : '') ); ?>
+	<?php echo( (!empty($template["userData"]["ProfilePicture"]) ? '<img src="/temp/_avatars/size512/' . $template["userData"]["ProfilePicture"] . '" alt="Profile picture" />' : '') ); ?>
 </div>
 
 <div id="updateFormHolder">

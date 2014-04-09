@@ -3,11 +3,11 @@
 session_start();
 
 define("DEBUG", true);
-define("GRID", true);
+define("GRID", false);
 
 define("LIB_DIR", __DIR__);
 define("WWW_APP_DIR", APP_DIR . "/www/app");
-define("UPLOAD_DIR", APP_DIR . "/temp/data");
+define("UPLOAD_DIR", APP_DIR . "/temp");
 
 define("BR", PHP_EOL);
 

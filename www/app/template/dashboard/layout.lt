@@ -3,11 +3,11 @@ global $app;
 ?}
 
 <div class="container">
-	<a title="Log out" class="close" href="{?= Template\Url::href(array($app["logoutPage"])) =?}">&times;</a>
+	<a title="Log out" class="close" href="{href array($app["logoutPage"]) /href}">&times;</a>
 
 	<h1>Hello, {{ userData.Name|escape|capitalise }}</h1>
 	<p>
-		<a href="{?= Template\Url::href(array($app["userPage"], "settings")) =?}">Try editing your profile</a> OR <a href="{?= Template\Url::href(array($app["userPage"], $template["randomProfile"])) =?}">visit someone else's profile!</a>
+		<a href="{href array($app["userPage"], "settings") /href}">Try editing your profile</a> OR <a href="{href array($app["userPage"], $template["randomProfile"]) /href}">visit someone else's profile!</a>
 	</p>
 
 	<hr>

@@ -2,7 +2,7 @@
 
 namespace Db;
 
-use \PDO;
+use PDO;
 use Utilities\Neon;
 use Utilities\String;
 use Utilities\Debug;
@@ -203,7 +203,7 @@ class Control
 
 			foreach ($d as $k => $v)
 			{
-				if (!isset($v[1]) or !isset($v[2])) {
+				if (!isset($v[1]) or ! isset($v[2])) {
 					Debug::err(new inputException(__METHOD__));
 					return false;
 				}

@@ -16,9 +16,6 @@ class Validate
 	{
 		$d = explode("@", $e);
 
-		if (isset($d[1])) {
-			$ch = checkdnsrr($d[1], "MX");
-		}
 		if (!preg_match('/^[^@]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$/', $e)) {
 			return false;
 		}
@@ -27,7 +24,7 @@ class Validate
 			return true;
 		}
 
-		if (!$ch) {
+		if (!checkdnsrr($d[1], "MX")) {
 			Debug::err(new appException("checkdnssrr() error for $e"));
 			return false;
 		}

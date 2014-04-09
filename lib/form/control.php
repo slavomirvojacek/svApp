@@ -102,8 +102,8 @@ class Control
 		$this->buttons = array();
 
 		$this->html = "";
-		$this->html .= '<form' . (!$ac ? ' autocomplete="off"' : '') . ($cl ? ' class="' . $cl . '"' : "") . ' method="' . $m . '" id="form' . ucfirst($this->id) . '"' . ($e ? ' enctype="' . $e . '"' : '') . '>' . PHP_EOL;
-		$this->html .= '<div class="flashMessage"></div>' . PHP_EOL;
+		$this->html .= '<form' . (!$ac ? ' autocomplete="off"' : '') . ($cl ? ' class="' . $cl . '"' : "") . ' method="' . $m . '" id="form' . ucfirst($this->id) . '"' . ($e ? ' enctype="' . $e . '"' : '') . '>' . BR;
+		$this->html .= '<div class="flashMessage"></div>' . BR;
 	}
 
 	public function __destruct()

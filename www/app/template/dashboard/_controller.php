@@ -7,6 +7,8 @@ use Model\User;
 final class controller extends Controller\userController
 {
 
+	private $form;
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -25,7 +27,7 @@ final class controller extends Controller\userController
 		$this->template->formEditProfile = $this->form["editProfile"]->render();
 
 		if (Http::isRequest("execute")) {
-			$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+			$post = Http::getPost();
 
 			$v = $this->form["editProfile"]->validate($post);
 			$img = ($_FILES["profilePicture"]["size"] > 0) ? $_FILES["profilePicture"] : false;

@@ -44,7 +44,7 @@ final class controller extends Controller\baseController
 		 * A request to sign in
 		 */
 		if (Http::isRequest("signIn")) {
-			$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+			$post = Http::getPost();
 
 			$v = $this->form["signIn"]->validate($post);
 
@@ -60,7 +60,7 @@ final class controller extends Controller\baseController
 		 * A request to sign up
 		 */
 		if (Http::isRequest("signUp")) {
-			$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+			$post = Http::getPost();
 
 			$v = $this->form["signUp"]->validate($post);
 

@@ -19,7 +19,7 @@ class Debug
 		}
 		else {
 			$f = APP_DIR . "/error_log";
-			$e = date("d M Y G:i:s", time()) . " => " . $i . PHP_EOL;
+			$e = date("d M Y G:i:s", time()) . " => " . $i . BR;
 			file_put_contents($f, $e, FILE_APPEND | LOCK_EX);
 		}
 

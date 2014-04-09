@@ -55,7 +55,8 @@ class Control extends Url
 			"{?=", "=?}",
 			"{?", "?}",
 			"{module", "/module}",
-			"{inc", "/inc}"
+			"{inc", "/inc}",
+			"{href", "/href}"
 	);
 
 	/**
@@ -68,6 +69,7 @@ class Control extends Url
 			"<?php ", " ?>",
 			'<?php Template\Template::getModule("', '"); ?>',
 			'<?php Template\Template::getLayout("', '"); ?>',
+			'<?php echo Template\Url::href(', '); ?>'
 	);
 
 	/**

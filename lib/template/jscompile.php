@@ -18,7 +18,7 @@ class jsCompile
 		if (DEBUG) {
 			foreach ($i as $k)
 			{
-				$r .= '<script src="' . $p . '/' . $k . '.js"></script>' . PHP_EOL;
+				$r .= '<script src="' . $p . '/' . $k . '.js"></script>' . BR;
 			}
 		}
 		else {
@@ -30,7 +30,7 @@ class jsCompile
 					$r .= file_get_contents($f);
 				}
 			}
-			$r .= '</script>' . PHP_EOL;
+			$r .= '</script>' . BR;
 		}
 
 		return $r;

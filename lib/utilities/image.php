@@ -6,7 +6,7 @@ class Image
 {
 
 	/**
-	 * Generates image thumgnail
+	 * Generates image thumbnail
 	 * @param object $s
 	 * @param string $t
 	 * @param int $w
@@ -15,12 +15,13 @@ class Image
 	 */
 	public static function generateImageThumbnail($s, $t, $w = 512, $h = 512)
 	{
-		if (!is_int($w) or !is_int($h)) {
+		if (!is_int($w) || !is_int($h)) {
 			Debug::err(new inputException(__METHOD__));
 			return false;
 		}
 
 		list($s_width, $s_height, $s_type) = getimagesize($s);
+
 		switch ($s_type)
 		{
 			case IMAGETYPE_GIF:
@@ -35,11 +36,17 @@ class Image
 				$s_gd_image = imagecreatefrompng($s);
 				$ext = '.png';
 				break;
+			case IMAGETYPE_BMP:
+				$s_gd_image = imagecreatefromgd($s);
+				$ext = '.bmp';
+				break;
 		}
+
 		if ($s_gd_image === false) {
 			Debug::err(new appException("Could not create image"));
 			return false;
 		}
+
 		$s_ratio_w = $s_width / $s_height;
 		$s_ratio_h = $s_height / $s_width;
 
@@ -51,6 +58,7 @@ class Image
 			$t_height = $h;
 			$t_width = floor(($s_ratio_w) * $w);
 		}
+
 		$t_gd_image = imagecreatetruecolor($t_width, $t_height);
 		imagecopyresampled($t_gd_image, $s_gd_image, 0, 0, 0, 0, $t_width, $t_height, $s_width, $s_height);
 		imagejpeg($t_gd_image, $t, 100);
@@ -73,7 +81,7 @@ class Image
 
 		foreach ($s as $k)
 		{
-			$a = UPLOAD_DIR . '/_avatars/avatar' . '-' . $k . '/' . $fn . '.jpg';
+			$a = UPLOAD_DIR . '/_avatars/size' . $k . '/' . $fn . '.jpg';
 
 			if (self::generateImageThumbnail($f, $a, $k, $k) !== true) {
 				Debug::err(new appException("Error creating thumbnail"));

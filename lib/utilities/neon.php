@@ -241,7 +241,9 @@ class Neon
 				}
 				else {
 					while (isset($tokens[$n + 1]) && $tokens[$n + 1][0] === "\n")
+					{
 						$n++; // skip to last indent
+					}
 					if (!isset($tokens[$n + 1])) {
 						break;
 					}

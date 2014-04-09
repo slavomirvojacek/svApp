@@ -29,15 +29,33 @@ class Http
 	 */
 	public static function isRequest($n, $t = "post")
 	{
-		$g = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
 		$p = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+		$g = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
 
 		switch ($t)
 		{
-			case "get": return isset($g[$n]);
 			case "post": return isset($p[$n]);
+			case "get": return isset($g[$n]);
 			default: return false;
 		}
+	}
+
+	/**
+	 * Returns sanitaised POST superglobal array
+	 * @return array
+	 */
+	public static function getPost()
+	{
+		return filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+	}
+
+	/**
+	 * Returns sanitaised GET superglobal array
+	 * @return array
+	 */
+	public static function getGet()
+	{
+		return filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
 	}
 
 }

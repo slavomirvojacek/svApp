@@ -2,7 +2,7 @@
 
 namespace Utilities;
 
-use \ZipArchive as Zip;
+use ZipArchive as Zip;
 
 class Upload
 {
@@ -189,7 +189,7 @@ class Upload
 
 	/**
 	 * Handles single file upload
-	 * @param string $n
+	 * @param string $on
 	 * @param scalar $f
 	 * @return boolean
 	 */
@@ -212,6 +212,7 @@ class Upload
 	 * Handles multiple files upload
 	 * @param array $n
 	 * @param array $f
+	 * @param array $s
 	 * @return string
 	 */
 	private function uploadFiles(array $n, array $f, array $s)

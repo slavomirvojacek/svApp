@@ -2,6 +2,8 @@
 
 /**
  * Class autoloading function
+ * @param string $n
+ * @throws Exception
  */
 function classAutoload($n)
 {
