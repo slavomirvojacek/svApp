@@ -33,18 +33,19 @@ class Debug
 	 */
 	public static function getStats()
 	{
-		global $appUsage;
+		global $app;
 
 		$appUsageN = getrusage();
 		$url = Url::parseUrl();
 
-		$s = $appUsage["ru_utime.tv_usec"] + $appUsage["ru_stime.tv_usec"];
+		$s = $app["usage"]["ru_utime.tv_usec"] + $app["usage"]["ru_stime.tv_usec"];
 		$f = $appUsageN["ru_utime.tv_usec"] + $appUsageN["ru_stime.tv_usec"];
 		$d = (($f - $s) / 1000) . " ms";
 
 		$out = '<div id="appInfo">';
 		$out .= '<strong>Execution time:</strong> ' . $d;
-		$out .= ' | <strong>Dependencies:</strong> ' . print_r($url, true);
+		$out .= ' :: <strong>Language:</strong> ' . $app["lang"];
+		$out .= ' :: <strong>Dependencies:</strong> ' . print_r($url, true);
 		$out .= '</div>';
 
 		return $out;

@@ -5,6 +5,7 @@ namespace Template;
 use Utilities\Http;
 use Utilities\Debug;
 use Utilities\String;
+use Utilities\Session;
 use Utilities\appException;
 
 class Control extends Url
@@ -79,6 +80,7 @@ class Control extends Url
 	{
 		$this->url = $this->parseUrl();
 
+		$this->assignLang();
 		$this->assignControllerVars();
 		$this->parseLayouts();
 	}
@@ -138,6 +140,24 @@ class Control extends Url
 		$vTemp = get_object_vars($this->controller);
 
 		$this->vars = (array) $vTemp["template"];
+	}
+
+	/**
+	 * Assigns current language from $_SESSION
+	 * if it exists. Otherwise, it assigns
+	 * the default app language
+	 * @global array $app
+	 */
+	private function assignLang()
+	{
+		global $app;
+
+		$s = Session::getInstance();
+		$session = $s->get();
+
+		$lang = isset($session["appLang"]) ? $session["appLang"] : $app["lang"];
+
+		$app["lang"] = $lang;
 	}
 
 	/**

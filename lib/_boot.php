@@ -8,15 +8,12 @@ define("GRID", false);
 define("LIB_DIR", __DIR__);
 define("WWW_APP_DIR", APP_DIR . "/www/app");
 define("UPLOAD_DIR", APP_DIR . "/temp");
-
 define("BR", PHP_EOL);
 
 /**
  * Error reporting
  */
 if (DEBUG) {
-	$appUsage = getrusage();
-
 	error_reporting(E_ALL);
 	ini_set("display_errors", E_ALL);
 }
@@ -29,7 +26,7 @@ else {
  */
 require_once "utilities/autoload.php";
 
-$app = Utilities\Neon::decode(file_get_contents(APP_DIR . "/_config/app.neon"));
+$app = array_merge(Utilities\Neon::decode(file_get_contents(APP_DIR . "/_config/app.neon")), $usage);
 
 date_default_timezone_set($app["dateTime"]);
 

@@ -135,7 +135,7 @@ final class controller extends Controller\baseController
 		$form->addInput("text", "name", "Your full name", false, false, "block", array("required", "name"));
 		$form->addInput("email", "email", "Your e-mail", false, false, "block", array("required", "email"));
 		$form->addInput("password", "password", "Your password", false, false, "block", array("required", "password"));
-		$form->addSelect("language", array(1 => "English", 2 => "Slovensky"), 1, "block", array("required", "select"), "Choose language");
+		$form->addSelect("language", array(1 => "English", 2 => "Français"), 1, "block", array("required", "select"), "Choose language");
 		$form->addButton("signUp", "Sign me up!", "buttonSecondary");
 
 		$this->form["signUp"] = $form;

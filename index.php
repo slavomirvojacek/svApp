@@ -5,5 +5,9 @@ if (version_compare(PHP_VERSION, '5.4.0', '<')) {
 	exit();
 }
 
+$usage = array(
+		"usage" => getrusage()
+);
+
 define("APP_DIR", __DIR__);
 include "lib/_boot.php";
