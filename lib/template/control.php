@@ -155,7 +155,7 @@ class Control extends Url
 		$s = Session::getInstance();
 		$session = $s->get();
 
-		$lang = isset($session["appLang"]) ? $session["appLang"] : $app["lang"];
+		$lang = isset($session["appLang"]) && in_array($session["appLang"], $app["langs"]) ? $session["appLang"] : $app["lang"];
 
 		$app["lang"] = $lang;
 	}

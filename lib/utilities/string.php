@@ -16,7 +16,7 @@ class String
 	 */
 	public static function sanUrl($u)
 	{
-		if (class_exists("Normalizer")) {
+		if (class_exists("Normalizer", false)) {
 			$c = preg_replace('/\p{M}/u', '', Normalizer::normalize($u, Normalizer::FORM_D));
 		}
 		else {
@@ -142,9 +142,10 @@ class String
 			Debug::err(new appException(__METHOD__));
 			return false;
 		}
+
 		for ($i = 1; $i < $l + 1; $i++)
 		{
-			$r = $a[rand(0, 35)];
+			$r = $a[mt_rand(0, 35)];
 			$s .= $r;
 		}
 

@@ -133,7 +133,7 @@ class User
 			$s = bin2hex(openssl_random_pseudo_bytes(22));
 		}
 
-		$h = crypt(urlencode($p), '$2y$07$' . $s);
+		$h = crypt(urlencode($p), '$2y$11$' . $s);
 
 		return array("salt" => $s, "password" => $h);
 	}

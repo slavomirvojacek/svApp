@@ -249,7 +249,7 @@ class Control
 		$r .= ' name="' . $n . '"';
 		$r .= $p && is_string($p) ? ' placeholder="' . $p . '"' : '';
 		$r .= $cl ? ' class="' . $cl . '"' : '';
-		$r .= $v ? ' value="' . $v . '"' : '';
+		$r .= $v ? ' value="' . String::san($v) . '"' : '';
 		$r .= $a ? ' autofocus' : '';
 		$r .= $t == "date" ? ' min="' . $p[0] . '" max="' . $p[1] . '"' : '';
 		$r .= $rule && in_array("required", $rule) ? ' required' : '';
@@ -292,11 +292,11 @@ class Control
 		$r .= '---</option>' . BR;
 		foreach ($d as $k => $v)
 		{
-			$r .= '<option value="' . $k . '"';
+			$r .= '<option value="' . String::san($k) . '"';
 			if ($s and $s == $k) {
 				$r .= ' selected';
 			}
-			$r .= '>' . $v . '</option>' . BR;
+			$r .= '>' . String::san($v) . '</option>' . BR;
 		}
 		$r .= '</select>' . BR;
 
@@ -334,7 +334,7 @@ class Control
 		$r .= $rule && in_array("required", $rule) ? ' required' : '';
 		$r .= $rule ? ' ' . self::parseRules($rule) : '';
 		$r .= '>';
-		$r .= $v ? $v : '';
+		$r .= $v ? String::san($v) : '';
 		$r .= '</textarea>' . BR;
 
 		if ($this->nameExists($n)) {
@@ -363,7 +363,7 @@ class Control
 		$r = '<button class="';
 		$r .= $cl ? $cl : '';
 		$r .= '" name="' . $n . '" id="button' . ucfirst($n) . '">';
-		$r .= $v;
+		$r .= String::san($v);
 		$r .= '</button>' . BR;
 
 		if ($this->nameExists($n)) {
@@ -390,7 +390,7 @@ class Control
 			return false;
 		}
 
-		$r = '<div class="fileButton"><div class="button buttonPrimary">' . $v . '</div>';
+		$r = '<div class="fileButton"><div class="button buttonPrimary">' . String::san($v) . '</div>';
 		$r .= '<input type="hidden" name="UPLOAD_IDENTIFIER" value="' . md5(time() . rand()) . '">' . BR;
 		$r .= '<input type="file" id="' . $n . '" name="' . $n;
 		$r .= $m ? '[]' : '';
