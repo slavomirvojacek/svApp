@@ -1,14 +1,19 @@
 <?php
 
-session_start();
+include "__check.php";
 
 define("DEBUG", true);
 define("GRID", false);
 
-define("LIB_DIR", __DIR__);
 define("WWW_APP_DIR", APP_DIR . "/www/app");
 define("UPLOAD_DIR", APP_DIR . "/temp");
 define("BR", PHP_EOL);
+
+/**
+ * Please, change the values below immediately
+ */
+define("AES_128_PASS", md5("secretPassword", true));
+define("AES_128_IV", "ecgf7h2pz89089b2");
 
 /**
  * Error reporting
@@ -24,7 +29,7 @@ else {
 /**
  * Initialise autoloader
  */
-require_once "utilities/autoload.php";
+require_once LIB_DIR . "/utilities/autoload.php";
 
 $app = array_merge(Utilities\Neon::decode(file_get_contents(APP_DIR . "/_config/app.neon")), $usage);
 
@@ -32,6 +37,10 @@ date_default_timezone_set($app["dateTime"]);
 
 mb_internal_encoding($app["encoding"]);
 mb_http_output($app["encoding"]);
+
+
+ini_set("session.cookie_httponly", 1);
+ini_set("session.hash_function", "whirlpool");
 
 ini_set("upload_max_filesize", "20M");
 ini_set("post_max_size", "20M");
