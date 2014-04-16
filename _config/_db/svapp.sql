@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.9
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Apr 09, 2014 at 01:54 PM
+-- Generation Time: Apr 16, 2014 at 12:35 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.5.10
 
@@ -56,6 +56,7 @@ CREATE TABLE `user` (
   `Created` int(11) NOT NULL,
   `ProfilePicture` tinytext COLLATE utf8_bin NOT NULL,
   `Type` tinyint(4) NOT NULL,
+  `uID` tinytext COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Email` (`Email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;

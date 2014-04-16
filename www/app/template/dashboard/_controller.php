@@ -78,7 +78,12 @@ final class controller extends Controller\userController
 	 */
 	private function assignRemoteUserData()
 	{
-		$ur_d = $this->db->get(array("Name", "Email"), "user", array("ID", $this->template->page["url"]["param"], 1, 11));
+		$ur_d = $this->db->get(array("Name", "Email", "uID"), "user", array("ID", $this->template->page["url"]["param"], 1, 11));
+
+		if (isset($ur_d["data"]["uID"])) {
+			$ur_d["data"]["uIDdecoded"] = User::uIDdecrypt($ur_d["data"]["uID"]);
+		}
+
 		$this->template->userRemoteData = $ur_d["data"];
 	}
 

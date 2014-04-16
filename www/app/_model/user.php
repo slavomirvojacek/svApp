@@ -9,6 +9,7 @@ use Utilities\Debug;
 use Utilities\Session;
 use Utilities\inputException;
 use Utilities\Image;
+use Utilities\String;
 
 class User
 {
@@ -150,7 +151,15 @@ class User
 
 		$ins = $db->insert($d["table"], $d["data"]);
 
-		if ($ins !== true) {
+		/**
+		 * Create multi-identification encrypted ID
+		 * helps in large-scale projects
+		 */
+		$lID = (int) $db->getLastInsertID();
+		$uID = self::uIDencrypt($d["table"], $lID);
+		$up = $db->update($d["table"], array("uID" => array($uID, 2, 64)), array("ID", $lID, 1, 11));
+
+		if ($ins !== true || $up !== true) {
 			return Alert::render(static::$errors[__FUNCTION__]["unknownErr"], "alert error");
 		}
 
@@ -238,6 +247,46 @@ class User
 		$this->session->destroy("userID");
 
 		Http::redirect($app["welcomePage"]);
+	}
+
+	/**
+	 * Encrypts user id based on
+	 * several information
+	 * @param string $tableName
+	 * @param int $lastID
+	 * @return string
+	 */
+	public static function uIDencrypt($tableName, $lastID)
+	{
+		$cpt1 = strlen($tableName) > 5 ? substr($tableName, 0, 5) : str_pad($tableName, 5, "-", STR_PAD_RIGHT);
+		$cpt2 = str_pad($lastID, 10, 0, STR_PAD_LEFT);
+		$cpt3 = time();
+
+		$rawID = $cpt1 . $cpt2 . $cpt3;
+
+		return String::encrypt128($rawID);
+	}
+
+	/**
+	 * Decrypts user id and returns information
+	 * @param string $d
+	 * @return array
+	 */
+	public static function uIDdecrypt($d)
+	{
+		$rawID = String::decrypt128($d);
+
+		$dbName = substr($rawID, 0, 5);
+		$id = substr($rawID, 5, 10);
+		$time = substr($rawID, 15, 10);
+
+		$dDec = array(
+				"dbName" => rtrim($dbName, "-"),
+				"id" => (int) ltrim($id, 0),
+				"time" => (int) $time
+		);
+
+		return $dDec;
 	}
 
 }

@@ -129,7 +129,7 @@ body {
   min-height: 100%;
   line-height: 22px;
   font-size: 14px;
-  color: #333;
+  color: #333333;
 }
 article,
 aside,
@@ -153,7 +153,7 @@ nav ul {
 }
 mark {
   background-color: #ff9;
-  color: #333;
+  color: #333333;
   font-weight: bold;
 }
 del {
@@ -222,31 +222,31 @@ a,
 .link {
   margin: 0;
   padding: 0;
-  color: #E23C5D;
+  color: #e23c5d;
   cursor: pointer !important;
   text-decoration: none;
 }
 a:hover,
-a:focus,
 .link:hover,
+a:focus,
 .link:focus {
   color: #cd1e41;
   text-decoration: underline;
 }
 a.secondary,
 .link.secondary {
-  color: #1D86AF;
+  color: #1d86af;
 }
 a.secondary:hover,
-a.secondary:focus,
 .link.secondary:hover,
+a.secondary:focus,
 .link.secondary:focus {
-  color: #166583;
+  color: #166483;
   text-decoration: underline;
 }
 a.inverted,
 .link.inverted {
-  color: #fff !important;
+  color: #ffffff !important;
 }
 noscript #warning {
   text-align: center;
@@ -256,13 +256,13 @@ noscript #warning {
   width: 100%;
   left: 0;
   top: 0;
-  background: #FF784B;
+  background: #ff784b;
   z-index: 999;
 }
 noscript #warning p {
   padding: 0 22px;
   margin: 0;
-  color: #fff;
+  color: #ffffff;
   font-size: 14px;
   min-height: 44px;
   line-height: 44px;
@@ -284,7 +284,7 @@ noscript #warning p {
   height: 22px;
   line-height: 22px;
   padding: 0 11px;
-  background: rgba(225,225,225,0.85);
+  background: rgba(225, 225, 225, 0.85);
   font-size: 12px;
 }
 .close {
@@ -296,7 +296,7 @@ noscript #warning p {
   line-height: 22px;
   opacity: .65;
   cursor: pointer !important;
-  color: #999 !important;
+  color: #999999 !important;
   text-decoration: none !important;
   font-weight: bold;
 }
@@ -305,8 +305,8 @@ noscript #warning p {
   opacity: 1;
 }
 .pageOoops {
-  background: #0A2832;
-  color: #fff;
+  background: #0a2832;
+  color: #ffffff;
   text-align: center;
   padding: 44px 22px;
 }
@@ -317,16 +317,16 @@ noscript #warning p {
   display: none;
 }
 ::-webkit-input-placeholder {
-  color: #999;
+  color: #999999;
 }
 :-moz-placeholder {
-  color: #999;
+  color: #999999;
 }
 ::-moz-placeholder {
-  color: #999;
+  color: #999999;
 }
 :-ms-input-placeholder {
-  color: #999;
+  color: #999999;
 }
 input,
 select,
@@ -348,7 +348,7 @@ button,
   font-size: 14px;
   border: none;
   outline: none;
-  color: #333;
+  color: #333333;
   margin: 0 0 11px;
   height: 44px;
   text-decoration: none;
@@ -361,7 +361,7 @@ textarea.inverted,
 button.inverted,
 .button.inverted,
 .input.inverted {
-  background: #fff !important;
+  background: #ffffff !important;
 }
 select {
   -webkit-appearance: none;
@@ -388,34 +388,34 @@ button,
   max-width: inherit;
 }
 .buttonPrimary {
-  background: #E23C5D;
-  color: #fff;
+  background: #e23c5d;
+  color: #ffffff;
 }
 .buttonPrimary:hover,
 .buttonPrimary:focus {
   background: #e02c50;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 .buttonPrimary.inverted {
-  color: #E23C5D !important;
+  color: #e23c5d !important;
 }
 .buttonSecondary {
-  background: #1D86AF;
-  color: #fff;
+  background: #1d86af;
+  color: #ffffff;
 }
 .buttonSecondary:hover,
 .buttonSecondary:focus {
   background: #1a7aa0;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 .buttonSecondary.inverted {
-  color: #1D86AF !important;
+  color: #1d86af !important;
 }
 input:invalid,
 textarea:invalid {
-  color: #FF784B;
+  color: #ff784b;
 }
 .fileButton {
   position: relative;
@@ -451,8 +451,8 @@ textarea:invalid {
   -o-border-radius: 3px;
   border-radius: 3px;
   min-height: 44px;
-  background: #DCC100;
-  color: #fff;
+  background: #dcc100;
+  color: #ffffff;
   margin: 0 0 22px 0;
 }
 .alert p {
@@ -460,11 +460,14 @@ textarea:invalid {
   line-height: 22px;
 }
 .alert.success {
-  background: #A9CE03;
+  background: #a9ce03;
 }
 .alert.error {
-  background: #FF784B;
+  background: #ff784b;
 }
+/**
+Feel free to edit this file
+*/
 .pageDashboard #profilePictureHolder {
   float: right;
   width: 30%;
@@ -494,17 +497,17 @@ footer {
   text-align: center;
 }
 footer p {
-  color: #999;
+  color: #999999;
   font-size: 12px;
 }
 footer p a {
-  color: #999;
+  color: #999999;
 }
 footer p a:hover,
 footer p a:focus {
   color: #808080;
 }
-@media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 144dpi) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   #debug-grid {
     background-image: url("/www/media/images/other/gridRetina.png");
     background-size: 22px 22px;
