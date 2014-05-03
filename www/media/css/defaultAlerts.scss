@@ -1,0 +1,21 @@
+.alert {
+	@include roundedCorners(3px);
+
+	min-height: $doubleUnit;
+	background: $alertWarning;
+	color: $white;
+	margin: 0 0 $baseUnit 0;
+
+	p {
+		padding: $halfUnit ($halfUnit + 3px) !important;
+		line-height: $baseUnit;
+	}
+
+	&.success {
+		background: $alertSuccess;
+	}
+
+	&.error {
+		background: $alertError;
+	}
+}

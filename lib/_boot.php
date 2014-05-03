@@ -10,7 +10,7 @@ define("UPLOAD_DIR", APP_DIR . "/temp");
 define("BR", PHP_EOL);
 
 /**
- * Please, change the values below immediately
+ * Change the values below immediately
  */
 define("AES_128_PASS", md5("secretPassword", true));
 define("AES_128_IV", "ecgf7h2pz89089b2");

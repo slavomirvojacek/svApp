@@ -46,8 +46,8 @@
 }
 
 .container {
-	max-width: @containerWidth;
+	max-width: $containerWidth;
 	margin: 0 auto;
-	padding: @baseUnit;
+	padding: $baseUnit;
 	position: relative;
 }

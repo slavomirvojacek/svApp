@@ -8,7 +8,7 @@ Feel free to edit this file
 		width: 30%;
 
 		img {
-			.roundedCorners(3px);
+			@include roundedCorners(3px);
 
 			max-width: 100%;
 			max-height: 440px;
@@ -32,18 +32,18 @@ Feel free to edit this file
 }
 
 footer {
-	.container;
-	.centerText;
+	@extend .container;
+	@extend .centerText;
 
 	p {
-		color: @grey;
-		font-size: @defaultFontSize - 2px;
+		color: $grey;
+		font-size: $defaultFontSize - 2px;
 
 		a {
-			color: @grey;
+			color: $grey;
 
 			&:hover, &:focus {
-				color: darken(@grey, 10%);
+				color: darken($grey, 10%);
 			}
 		}
 	}

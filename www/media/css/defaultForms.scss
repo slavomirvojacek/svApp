@@ -1,17 +1,17 @@
 ::-webkit-input-placeholder {
-	color: @grey;
+	color: $grey;
 }
 
 :-moz-placeholder {
-	color: @grey;
+	color: $grey;
 }
 
 ::-moz-placeholder {
-	color: @grey;
+	color: $grey;
 }
 
 :-ms-input-placeholder {
-	color: @grey;
+	color: $grey;
 }
 
 input,
@@ -20,49 +20,49 @@ textarea,
 button,
 .button,
 .input {
-	.boxShadow(none);
-	.roundedCorners(3px);
+	@include boxShadow(none);
+	@include roundedCorners(3px);
 
 	background: #eee;
-	padding: 0 @halfUnit;
-	font-family: @defaultFontFamily !important;
-	font-size: @defaultFontSize;
+	padding: 0 $halfUnit;
+	font-family: $defaultFontFamily !important;
+	font-size: $defaultFontSize;
 	border: none;
 	outline: none;
-	color: @black;
-	margin: 0 0 @halfUnit;
-	height: @doubleUnit;
+	color: $black;
+	margin: 0 0 $halfUnit;
+	height: $doubleUnit;
 	text-decoration: none;
 	min-width: 198px;
 	max-width: 220px;
 
 	&.inverted {
-		background: @white !important;
+		background: $white !important;
 	}
 }
 
 select {
 	-webkit-appearance: none;
 
-	min-width: 198px + @baseUnit;
-	max-width: 220px + @baseUnit;
-	padding: 0 @doubleUnit 0 @halfUnit;
-	background-image: url("@{imageBase}/other/arrowSelect.png");
+	min-width: 198px + $baseUnit;
+	max-width: 220px + $baseUnit;
+	padding: 0 $doubleUnit 0 $halfUnit;
+	background-image: url("${imageBase}/other/arrowSelect.png");
 	background-repeat: no-repeat;
 	background-position: right 14px top 20px;
 }
 
 textarea {
-	height: @tripleUnit;
+	height: $tripleUnit;
 	resize: vertical;
-	padding: @halfUnit;
+	padding: $halfUnit;
 }
 
 button,
 .button {
 	cursor: pointer !important;
-	line-height: @doubleUnit;
-	padding: 0 @baseUnit;
+	line-height: $doubleUnit;
+	padding: 0 $baseUnit;
 	text-align: center;
 	display: inline-block;
 	min-width: inherit;
@@ -70,47 +70,47 @@ button,
 }
 
 .buttonPrimary {
-	background: @colorPrimary;
-	color: @white;
+	background: $colorPrimary;
+	color: $white;
 
 	&:hover, &:focus {
-		background: darken(@colorPrimary, 3.5%);
-		color: @white;
+		background: darken($colorPrimary, 3.5%);
+		color: $white;
 		text-decoration: none;
 	}
 
 	&.inverted {
-		color: @colorPrimary !important;
+		color: $colorPrimary !important;
 	}
 }
 
 .buttonSecondary {
-	background: @colorSecondary;
-	color: @white;
+	background: $colorSecondary;
+	color: $white;
 
 	&:hover, &:focus {
-		background: darken(@colorSecondary, 3.5%);
-		color: @white;
+		background: darken($colorSecondary, 3.5%);
+		color: $white;
 		text-decoration: none;
 	}
 
 	&.inverted {
-		color: @colorSecondary !important;
+		color: $colorSecondary !important;
 	}
 }
 
 input:invalid,
 textarea:invalid {
-	color: @alertError;
+	color: $alertError;
 }
 
 .fileButton {
 	position: relative;
 	overflow: hidden;
-	margin: 0 0 @halfUnit;
+	margin: 0 0 $halfUnit;
 
 	input[type="file"] {
-		.wipe;
+		@extend .wipe;
 
 		position: absolute;
 		left: 0;
@@ -128,9 +128,9 @@ textarea:invalid {
 }
 
 .flashMessage {
-	background: url("@{imageBase}/other/loading.gif") no-repeat center center transparent;
+	background: url("${imageBase}/other/loading.gif") no-repeat center center transparent;
 	background-size: 22px 22px;
-	min-height: @doubleUnit;
+	min-height: $doubleUnit;
 	display: none;
-	margin: 0 0 @baseUnit;
+	margin: 0 0 $baseUnit;
 }
