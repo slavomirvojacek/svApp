@@ -33,8 +33,11 @@ button,
 	margin: 0 0 $halfUnit;
 	height: $doubleUnit;
 	text-decoration: none;
-	min-width: 198px;
-	max-width: 220px;
+	min-width: 220px;
+
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 
 	&.inverted {
 		background: $white !important;
@@ -50,6 +53,11 @@ select {
 	background-image: url("${imageBase}/other/arrowSelect.png");
 	background-repeat: no-repeat;
 	background-position: right 14px top 20px;
+
+	@include highRes() {
+		background-image: url("#{$imageBase}/other/arrowSelectRetina.png");
+		background-size: 16px 8px;
+	}
 }
 
 textarea {
@@ -133,4 +141,8 @@ textarea:invalid {
 	min-height: $doubleUnit;
 	display: none;
 	margin: 0 0 $baseUnit;
+
+	@include highRes() {
+		background-image: url("#{$imageBase}/other/loadingRetina.gif");
+	}
 }

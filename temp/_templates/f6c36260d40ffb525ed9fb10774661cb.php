@@ -2,7 +2,7 @@
 global $app;
  ?>
 
-<div class="container">
+<div class="container clear">
 	<a title="Log out" class="close" href="<?php echo Template\Url::href( array($app["logoutPage"]) ); ?>">&times;</a>
 
 	<h1>Hello, <?php echo( $template["userData"]["Name"] ); ?></h1>

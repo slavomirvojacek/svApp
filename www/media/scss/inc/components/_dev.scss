@@ -1,0 +1,26 @@
+#debug-grid {
+	background: url("${imageBase}/other/grid.png") repeat left top transparent;
+  width: $containerWidth + 1px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: none;
+  z-index: 999;
+  min-height: 100%;
+	margin: 0 0 0 (-$containerWidth / 2);
+
+	@include highRes() {
+		background-image: url("#{$imageBase}/other/gridRetina.png");
+		background-size: 22px 22px;
+	}
+}
+
+#appInfo {
+	position: fixed;
+	bottom: 0;
+	height: $baseUnit;
+	line-height: $baseUnit;
+	padding: 0 $halfUnit;
+	background: rgba(225, 225, 225, .85);
+	font-size: $defaultFontSize - 2px;
+}

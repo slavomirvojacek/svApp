@@ -1,0 +1,47 @@
+/*
+Basic colours
+*/
+$black: #333;
+$grey: #999;
+$white: #fff;
+
+$colorPrimary: #E23C5D;
+$colorPrimaryDark: darken($colorPrimary, 10%);
+
+$colorSecondary: #1D86AF;
+$colorSecondaryDark: darken($colorSecondary, 10%);
+
+$colorTertiary: #0A2832;
+$colorTertiaryDark: darken($colorTertiary, 10%);
+
+/*
+Components colours
+*/
+$alertSuccess: #A9CE03;
+$alertWarning: #DCC100;
+$alertError: #FF784B;
+
+
+/*
+Fonts and font-size
+*/
+$defaultFontFamily: Arial, sans-serif;
+$defaultFontSize: 14px;
+
+
+/*
+Sizing
+*/
+$baseUnit: 22px;
+$halfUnit: $baseUnit / 2;
+$doubleHalfUnit: $baseUnit * 1.5;
+$doubleUnit: $baseUnit * 2;
+$tripleUnit: $baseUnit * 3;
+$quadrupleUnit: $baseUnit * 4;
+
+
+/*
+Misc
+*/
+$imageBase: "/www/media/images";
+$containerWidth: 990px;

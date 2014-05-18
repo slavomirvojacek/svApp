@@ -1,0 +1,41 @@
+noscript {
+	#warning {
+		@extend .centerText;
+		@extend .wipe;
+
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		background: $alertError;
+		z-index: 999;
+
+		p {
+			padding: 0 $baseUnit;
+			margin: 0;
+			color: $white;
+			font-size: $defaultFontSize;
+			min-height: $doubleUnit;
+			line-height: $doubleUnit;
+		}
+	}
+}
+
+.close {
+	@extend .centerText;
+
+	float: right;
+	position: relative;
+	width: $baseUnit;
+	height: $baseUnit;
+	line-height: $baseUnit;
+	opacity: .65;
+	cursor: pointer !important;
+	color: $grey !important;
+	text-decoration: none !important;
+	font-weight: bold;
+
+	&:hover, &:focus {
+		opacity: 1;
+	}
+}

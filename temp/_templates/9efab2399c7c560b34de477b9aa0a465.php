@@ -10,7 +10,7 @@
 
 	<title><?php echo( $template["page"]["title"] ); ?> / <?php echo( $template["app"]["siteName"] ); ?></title>
 
-	<link rel="stylesheet" href="/www/media/css/screen.<?php echo( DEBUG ? 'php' : 'css' ); ?>">
+	<link rel="stylesheet" href="/www/media/css/screen.css">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon-precomposed" href="/screenIcon.png">
 

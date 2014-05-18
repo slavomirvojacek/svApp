@@ -13,13 +13,10 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: 100%;
 	font-family: $defaultFontFamily;
 	font-weight: normal;
 	vertical-align: baseline;
 }
-
-@import "defaultClasses.scss";
 
 html,
 body {
@@ -79,16 +76,32 @@ em, i {
 
 p {
 	margin: $halfUnit 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 h1, h2, h3 {
-	margin: 0 0 $baseUnit;
+	margin: $doubleUnit 0 $baseUnit;
 	line-height: $doubleUnit;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 h4, h5, h6 {
-	margin: 0 0 $halfUnit;
+	margin: $baseUnit 0 $halfUnit;
 	line-height: $doubleHalfUnit;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 h1 {
@@ -117,6 +130,10 @@ h6 {
 
 ul {
 	margin: 0 0 $baseUnit $baseUnit;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 a, .link {
@@ -142,84 +159,5 @@ a, .link {
 
 	&.inverted {
 		color: $white !important;
-	}
-}
-
-noscript {
-	#warning {
-		@extend .centerText;
-		@extend .wipe;
-
-		position: fixed;
-		width: 100%;
-		left: 0;
-		top: 0;
-		background: $alertError;
-		z-index: 999;
-
-		p {
-			padding: 0 $baseUnit;
-			margin: 0;
-			color: $white;
-			font-size: $defaultFontSize;
-			min-height: $doubleUnit;
-			line-height: $doubleUnit;
-		}
-	}
-}
-
-#debug-grid {
-	background: url("${imageBase}/other/grid.png") repeat left top transparent;
-  width: $containerWidth + 1px;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  display: none;
-  z-index: 999;
-  min-height: 100%;
-	margin: 0 0 0 -($containerWidth / 2);
-}
-
-#appInfo {
-	position: fixed;
-	bottom: 0;
-	height: $baseUnit;
-	line-height: $baseUnit;
-	padding: 0 $halfUnit;
-	background: rgba(225, 225, 225, .85);
-	font-size: $defaultFontSize - 2px;
-}
-
-.close {
-	@extend .centerText;
-
-	float: right;
-	position: relative;
-	width: $baseUnit;
-	height: $baseUnit;
-	line-height: $baseUnit;
-	opacity: .65;
-	cursor: pointer !important;
-	color: $grey !important;
-	text-decoration: none !important;
-	font-weight: bold;
-
-	&:hover, &:focus {
-		opacity: 1;
-	}
-}
-
-.pageOoops {
-	background: $colorTertiary;
-	color: $white;
-	text-align: center;
-	padding: $doubleUnit $baseUnit;
-
-	.button {
-		margin: $baseUnit 0 0;
-	}
-
-	footer {
-		display: none;
 	}
 }
