@@ -1,5 +1,5 @@
 #debug-grid {
-	background: url("${imageBase}/other/grid.png") repeat left top transparent;
+	background: url("#{$imageBase}/other/grid.png") repeat left top transparent;
   width: $containerWidth + 1px;
   position: absolute;
   left: 50%;

@@ -216,7 +216,7 @@ noscript #warning {
     opacity: 1; }
 
 #debug-grid {
-  background: url("${imageBase}/other/grid.png") repeat left top transparent;
+  background: url("/www/media/images/other/grid.png") repeat left top transparent;
   width: 991px;
   position: absolute;
   left: 50%;
@@ -311,7 +311,7 @@ select {
   min-width: 220px;
   max-width: 242px;
   padding: 0 44px 0 11px;
-  background-image: url("${imageBase}/other/arrowSelect.png");
+  background-image: url("/www/media/images/other/arrowSelect.png");
   background-repeat: no-repeat;
   background-position: right 14px top 20px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx) {
@@ -375,7 +375,7 @@ textarea:invalid {
     margin: 0; }
 
 .flashMessage {
-  background: url("${imageBase}/other/loading.gif") no-repeat center center transparent;
+  background: url("/www/media/images/other/loading.gif") no-repeat center center transparent;
   background-size: 22px 22px;
   min-height: 44px;
   display: none;
