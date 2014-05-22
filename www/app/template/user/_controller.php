@@ -121,7 +121,7 @@ final class controller extends Controller\baseController
 		$form = new Form("post", "signIn");
 		$form->addInput("email", "email", "Your e-mail", false, false, "block", array("required", "email"));
 		$form->addInput("password", "password", "Your password", false, false, "block", array("required"));
-		$form->addButton("signIn", "Sign me in!", "buttonSecondary");
+		$form->addButton("signIn", "Sign me in!", "button-secondary");
 
 		$this->form["signIn"] = $form;
 	}
@@ -136,7 +136,7 @@ final class controller extends Controller\baseController
 		$form->addInput("email", "email", "Your e-mail", false, false, "block", array("required", "email"));
 		$form->addInput("password", "password", "Your password", false, false, "block", array("required", "password"));
 		$form->addSelect("language", array(1 => "English", 2 => "Français"), 1, "block", array("required", "select"), "Choose language");
-		$form->addButton("signUp", "Sign me up!", "buttonSecondary");
+		$form->addButton("signUp", "Sign me up!", "button-secondary");
 
 		$this->form["signUp"] = $form;
 	}

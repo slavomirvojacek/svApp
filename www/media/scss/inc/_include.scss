@@ -1,3 +1,6 @@
+@import "_bourbon/bourbon";
+@import "_neat/neat";
+
 @import "global/base";
 
 @import "mixins/common";
@@ -13,4 +16,4 @@
 @import "components/alerts";
 @import "components/forms";
 
-@import "layout/global";
+@import "layout/common/layout";

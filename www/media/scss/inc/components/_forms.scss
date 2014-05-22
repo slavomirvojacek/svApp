@@ -20,24 +20,20 @@ textarea,
 button,
 .button,
 .input {
-	@include boxShadow(none);
-	@include roundedCorners(3px);
+	@include box-shadow(none);
+	@include rounded-corners(3px);
 
 	background: #eee;
-	padding: 0 $halfUnit;
-	font-family: $defaultFontFamily !important;
-	font-size: $defaultFontSize;
+	padding: 0 $half-unit;
+	font-family: $default-font-family !important;
+	font-size: $default-font-size;
 	border: none;
 	outline: none;
 	color: $black;
-	margin: 0 0 $halfUnit;
-	height: $doubleUnit;
+	margin: 0 0 $half-unit;
+	height: $double-unit;
 	text-decoration: none;
 	min-width: 220px;
-
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 
 	&.inverted {
 		background: $white !important;
@@ -47,78 +43,78 @@ button,
 select {
 	-webkit-appearance: none;
 
-	min-width: 198px + $baseUnit;
-	max-width: 220px + $baseUnit;
-	padding: 0 $doubleUnit 0 $halfUnit;
-	background-image: url("#{$imageBase}/other/arrowSelect.png");
+	min-width: 198px + $base-unit;
+	max-width: 220px + $base-unit;
+	padding: 0 $double-unit 0 $half-unit;
+	background-image: url("#{$image-base}/other/arrowSelect.png");
 	background-repeat: no-repeat;
 	background-position: right 14px top 20px;
 
-	@include highRes() {
-		background-image: url("#{$imageBase}/other/arrowSelectRetina.png");
+	@include high-res() {
+		background-image: url("#{$image-base}/other/arrowSelectRetina.png");
 		background-size: 16px 8px;
 	}
 }
 
 textarea {
-	height: $tripleUnit;
+	height: $triple-unit;
 	resize: vertical;
-	padding: $halfUnit;
+	padding: $half-unit;
 }
 
 button,
 .button {
 	cursor: pointer !important;
-	line-height: $doubleUnit;
-	padding: 0 $baseUnit;
+	line-height: $double-unit;
+	padding: 0 $base-unit;
 	text-align: center;
 	display: inline-block;
 	min-width: inherit;
 	max-width: inherit;
 }
 
-.buttonPrimary {
-	background: $colorPrimary;
+.button-primary {
+	background: $color-primary;
 	color: $white;
 
 	&:hover, &:focus {
-		background: darken($colorPrimary, 3.5%);
+		background: darken($color-primary, 3.5%);
 		color: $white;
 		text-decoration: none;
 	}
 
 	&.inverted {
-		color: $colorPrimary !important;
+		color: $color-primary !important;
 	}
 }
 
-.buttonSecondary {
-	background: $colorSecondary;
+.button-secondary {
+	background: $color-secondary;
 	color: $white;
 
 	&:hover, &:focus {
-		background: darken($colorSecondary, 3.5%);
+		background: darken($color-secondary, 3.5%);
 		color: $white;
 		text-decoration: none;
 	}
 
 	&.inverted {
-		color: $colorSecondary !important;
+		color: $color-secondary !important;
 	}
 }
 
 input:invalid,
 textarea:invalid {
-	color: $alertError;
+	color: $alert-error;
 }
 
-.fileButton {
+.file-button {
 	position: relative;
 	overflow: hidden;
-	margin: 0 0 $halfUnit;
+	margin: 0 0 $half-unit;
 
 	input[type="file"] {
-		@extend .wipe;
+		@extend .wipe-margin-padding;
 
 		position: absolute;
 		left: 0;
@@ -135,14 +131,14 @@ textarea:invalid {
 	}
 }
 
-.flashMessage {
-	background: url("#{$imageBase}/other/loading.gif") no-repeat center center transparent;
+.flash-message {
+	background: url("#{$image-base}/other/loading.gif") no-repeat center center transparent;
 	background-size: 22px 22px;
-	min-height: $doubleUnit;
+	min-height: $double-unit;
 	display: none;
-	margin: 0 0 $baseUnit;
+	margin: 0 0 $base-unit;
 
-	@include highRes() {
-		background-image: url("#{$imageBase}/other/loadingRetina.gif");
+	@include high-res() {
+		background-image: url("#{$image-base}/other/loadingRetina.gif");
 	}
 }

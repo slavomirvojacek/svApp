@@ -1,34 +1,34 @@
 noscript {
 	#warning {
-		@extend .centerText;
-		@extend .wipe;
+		@extend .text-center;
+		@extend .wipe-margin-padding;
 
 		position: fixed;
 		width: 100%;
 		left: 0;
 		top: 0;
-		background: $alertError;
+		background: $alert-error;
 		z-index: 999;
 
 		p {
-			padding: 0 $baseUnit;
+			padding: 0 $base-unit;
 			margin: 0;
 			color: $white;
-			font-size: $defaultFontSize;
-			min-height: $doubleUnit;
-			line-height: $doubleUnit;
+			font-size: $default-font-size;
+			min-height: $double-unit;
+			line-height: $double-unit;
 		}
 	}
 }
 
 .close {
-	@extend .centerText;
+	@extend .text-center;
 
 	float: right;
 	position: relative;
-	width: $baseUnit;
-	height: $baseUnit;
-	line-height: $baseUnit;
+	width: $base-unit;
+	height: $base-unit;
+	line-height: $base-unit;
 	opacity: .65;
 	cursor: pointer !important;
 	color: $grey !important;

@@ -1,47 +1,38 @@
-/*
-Basic colours
-*/
+//Basic colours TODO REVIEW
 $black: #333;
 $grey: #999;
 $white: #fff;
 
-$colorPrimary: #E23C5D;
-$colorPrimaryDark: darken($colorPrimary, 10%);
+$color-primary: #E23C5D;
+$color-primary-dark: darken($color-primary, 10%);
 
-$colorSecondary: #1D86AF;
-$colorSecondaryDark: darken($colorSecondary, 10%);
+$color-secondary: #1D86AF;
+$color-secondary-dark: darken($color-secondary, 10%);
 
-$colorTertiary: #0A2832;
-$colorTertiaryDark: darken($colorTertiary, 10%);
-
-/*
-Components colours
-*/
-$alertSuccess: #A9CE03;
-$alertWarning: #DCC100;
-$alertError: #FF784B;
+$color-tertiary: #0A2832;
+$color-tertiary-dark: darken($color-tertiary, 10%);
 
 
-/*
-Fonts and font-size
-*/
-$defaultFontFamily: Arial, sans-serif;
-$defaultFontSize: 14px;
+//Components colours
+$alert-success: #A9CE03;
+$alert-warning: #DCC100;
+$alert-error: #FF784B;
 
 
-/*
-Sizing
-*/
-$baseUnit: 22px;
-$halfUnit: $baseUnit / 2;
-$doubleHalfUnit: $baseUnit * 1.5;
-$doubleUnit: $baseUnit * 2;
-$tripleUnit: $baseUnit * 3;
-$quadrupleUnit: $baseUnit * 4;
+//Fonts and font-size
+$default-font-family: Arial, sans-serif;
+$default-font-size: 14px;
 
 
-/*
-Misc
-*/
-$imageBase: "/www/media/images";
-$containerWidth: 990px;
+//Sizing
+$base-unit: 22px;
+$half-unit: $base-unit / 2;
+$double-half-unit: $base-unit * 1.5;
+$double-unit: $base-unit * 2;
+$triple-unit: $base-unit * 3;
+$quadruple-unit: $base-unit * 4;
+
+
+//Misc
+$image-base: "/www/media/images";
+$container-width: 990px;

@@ -58,7 +58,7 @@ final class controller extends Controller\userController
 		$form->addInput("email", "email", "E-mail", $this->template->userData["Email"], false, false, array("required", "email"));
 		$form->html .= "<hr>";
 		$form->addSelect("language", array(1 => "English", 2 => "Français"), $this->template->userData["Language"], false, array("required", "select"), "Choose language");
-		$form->addButton("execute", "Save changes", "buttonPrimary");
+		$form->addButton("execute", "Save changes", "button-primary");
 
 		$this->form["editProfile"] = $form;
 	}

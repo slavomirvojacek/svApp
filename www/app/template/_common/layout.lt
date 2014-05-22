@@ -20,7 +20,7 @@
 
   </head>
 
-  <body class="page{{ page.url.template|capitalise }} {{ app.lang }}">
+  <body class="page-{{ page.url.template|lower }} {{ app.lang }}">
 
 	<noscript>
 		<div id="warning">

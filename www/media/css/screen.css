@@ -1,18 +1,13 @@
-/*
-Basic colours
-*/
-/*
-Components colours
-*/
-/*
-Fonts and font-size
-*/
-/*
-Sizing
-*/
-/*
-Misc
-*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 html, body, div, span, object, iframe, hr,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -136,12 +131,21 @@ a, .link {
   a.inverted, .link.inverted {
     color: white !important; }
 
-.centerBlock {
+.block-center {
   margin-left: auto;
   margin-right: auto; }
 
-.centerText, noscript #warning, .close, footer {
+.text-center, noscript #warning, .close, footer {
   text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.text-justify {
+  text-align: justify; }
 
 .block,
 .show {
@@ -153,32 +157,24 @@ a, .link {
 .invisible {
   visibility: hidden; }
 
-.wipeMargin {
+.wipe-margin {
   margin: 0; }
 
-.wipePadding {
+.wipe-padding {
   padding: 0; }
 
-.wipe, noscript #warning, .fileButton input[type="file"] {
+.wipe-margin-padding, noscript #warning, .file-button input[type="file"] {
   margin: 0;
   padding: 0; }
 
-.left {
+.pull-left {
   float: left; }
 
-.right {
+.pull-right {
   float: right; }
 
 .clearfix {
   clear: both; }
-
-.clear {
-  zoom: 1; }
-  .clear:before, .clear:after {
-    content: "";
-    display: table; }
-  .clear:after {
-    clear: both; }
 
 .container, footer {
   max-width: 990px;
@@ -294,10 +290,7 @@ button,
   margin: 0 0 11px;
   height: 44px;
   text-decoration: none;
-  min-width: 220px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; }
+  min-width: 220px; }
   input.inverted,
   select.inverted,
   textarea.inverted,
@@ -334,35 +327,35 @@ button,
   min-width: inherit;
   max-width: inherit; }
 
-.buttonPrimary {
+.button-primary {
   background: #e23c5d;
   color: white; }
-  .buttonPrimary:hover, .buttonPrimary:focus {
+  .button-primary:hover, .button-primary:focus {
     background: #e02c50;
     color: white;
     text-decoration: none; }
-  .buttonPrimary.inverted {
+  .button-primary.inverted {
     color: #e23c5d !important; }
 
-.buttonSecondary {
+.button-secondary {
   background: #1d86af;
   color: white; }
-  .buttonSecondary:hover, .buttonSecondary:focus {
+  .button-secondary:hover, .button-secondary:focus {
     background: #1a7aa0;
     color: white;
     text-decoration: none; }
-  .buttonSecondary.inverted {
+  .button-secondary.inverted {
     color: #1d86af !important; }
 
 input:invalid,
 textarea:invalid {
   color: #ff784b; }
 
-.fileButton {
+.file-button {
   position: relative;
   overflow: hidden;
   margin: 0 0 11px; }
-  .fileButton input[type="file"] {
+  .file-button input[type="file"] {
     position: absolute;
     left: 0;
     top: 0;
@@ -371,17 +364,17 @@ textarea:invalid {
     opacity: 0;
     z-index: 2;
     cursor: pointer !important; }
-  .fileButton .button {
+  .file-button .button {
     margin: 0; }
 
-.flashMessage {
+.flash-message {
   background: url("/www/media/images/other/loading.gif") no-repeat center center transparent;
   background-size: 22px 22px;
   min-height: 44px;
   display: none;
   margin: 0 0 22px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx) {
-    .flashMessage {
+    .flash-message {
       background-image: url("/www/media/images/other/loadingRetina.gif"); } }
 
 footer p {
@@ -392,30 +385,37 @@ footer p {
     footer p a:hover, footer p a:focus {
       color: gray; }
 
-.pageDashboard #profilePictureHolder {
-  float: right;
-  width: 30%; }
-  .pageDashboard #profilePictureHolder img {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    max-width: 100%;
-    max-height: 440px; }
-.pageDashboard #updateFormHolder {
-  float: left;
-  width: 60%; }
+.page-dashboard #settings-holder {
+  zoom: 1; }
+  .page-dashboard #settings-holder:before, .page-dashboard #settings-holder:after {
+    content: "";
+    display: table; }
+  .page-dashboard #settings-holder:after {
+    clear: both; }
+  .page-dashboard #settings-holder #profile-picture-holder {
+    float: right;
+    width: 30%; }
+    .page-dashboard #settings-holder #profile-picture-holder img {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      max-width: 100%;
+      max-height: 440px; }
+  .page-dashboard #settings-holder #update-form-holder {
+    float: left;
+    width: 60%; }
 
-.pageWelcome ul li.active, .pageUser ul li.active {
+.page-welcome ul li.active, .page-user ul li.active {
   font-weight: bold; }
 
-.pageOoops {
+.page-ooops {
   background: #0a2832;
   color: white;
   text-align: center;
   padding: 44px 22px; }
-  .pageOoops .button {
+  .page-ooops .button {
     margin: 22px 0 0; }
-  .pageOoops footer {
+  .page-ooops footer {
     display: none; }

@@ -102,8 +102,8 @@ class Control
 		$this->buttons = array();
 
 		$this->html = "";
-		$this->html .= '<form' . (!$ac ? ' autocomplete="off"' : '') . ($cl ? ' class="' . $cl . '"' : "") . ' method="' . $m . '" id="form' . ucfirst($this->id) . '"' . ($e ? ' enctype="' . $e . '"' : '') . '>' . BR;
-		$this->html .= '<div class="flashMessage"></div>' . BR;
+		$this->html .= '<form' . (!$ac ? ' autocomplete="off"' : '') . ($cl ? ' class="' . $cl . '"' : "") . ' method="' . $m . '" id="form-' . strtolower($this->id) . '"' . ($e ? ' enctype="' . $e . '"' : '') . '>' . BR;
+		$this->html .= '<div class="flash-message"></div>' . BR;
 	}
 
 	public function __destruct()
@@ -362,7 +362,7 @@ class Control
 
 		$r = '<button class="';
 		$r .= $cl ? $cl : '';
-		$r .= '" name="' . $n . '" id="button' . ucfirst($n) . '">';
+		$r .= '" name="' . $n . '" id="button-' . strtolower($n) . '">';
 		$r .= String::san($v);
 		$r .= '</button>' . BR;
 
@@ -390,7 +390,7 @@ class Control
 			return false;
 		}
 
-		$r = '<div class="fileButton"><div class="button buttonPrimary">' . String::san($v) . '</div>';
+		$r = '<div class="file-button"><div class="button button-primary">' . String::san($v) . '</div>';
 		$r .= '<input type="hidden" name="UPLOAD_IDENTIFIER" value="' . md5(time() . rand()) . '">' . BR;
 		$r .= '<input type="file" id="' . $n . '" name="' . $n;
 		$r .= $m ? '[]' : '';

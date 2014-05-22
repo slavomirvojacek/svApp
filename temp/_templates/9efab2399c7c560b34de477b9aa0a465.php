@@ -20,7 +20,7 @@
 
   </head>
 
-  <body class="page<?php echo( $template["page"]["url"]["template"] ); ?> <?php echo( $template["app"]["lang"] ); ?>">
+  <body class="page-<?php echo( $template["page"]["url"]["template"] ); ?> <?php echo( $template["app"]["lang"] ); ?>">
 
 	<noscript>
 		<div id="warning">

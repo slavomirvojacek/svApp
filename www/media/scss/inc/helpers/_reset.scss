@@ -1,3 +1,7 @@
+* {
+	@include box-sizing(border-box);
+}
+
 html,body, div, span, object, iframe, hr,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -13,7 +17,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-family: $defaultFontFamily;
+	font-family: $default-font-family;
 	font-weight: normal;
 	vertical-align: baseline;
 }
@@ -21,8 +25,8 @@ time, mark, audio, video {
 html,
 body {
 	min-height: 100%;
-	line-height: $baseUnit;
-	font-size: $defaultFontSize;
+	line-height: $base-unit;
+	font-size: $default-font-size;
 	color: $black;
 }
 
@@ -32,7 +36,7 @@ article, aside, footer, header, menu, nav, section {
 
 table, tbody, tr, th, td {
 	border-collapse: collapse;
-	font-size: $defaultFontSize;
+	font-size: $default-font-size;
 }
 
 nav ul {
@@ -63,7 +67,7 @@ hr {
 	display: block;
 	height: 1px;
 	border-top: 1px solid #eee;
-	margin: $baseUnit 0;
+	margin: $base-unit 0;
 }
 
 strong, b {
@@ -75,7 +79,7 @@ em, i {
 }
 
 p {
-	margin: $halfUnit 0;
+	margin: $half-unit 0;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -83,8 +87,8 @@ p {
 }
 
 h1, h2, h3 {
-	margin: $doubleUnit 0 $baseUnit;
-	line-height: $doubleUnit;
+	margin: $double-unit 0 $base-unit;
+	line-height: $double-unit;
 
 	&:first-of-type {
 		margin-top: 0;
@@ -96,8 +100,8 @@ h1, h2, h3 {
 }
 
 h4, h5, h6 {
-	margin: $baseUnit 0 $halfUnit;
-	line-height: $doubleHalfUnit;
+	margin: $base-unit 0 $half-unit;
+	line-height: $double-half-unit;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -105,31 +109,31 @@ h4, h5, h6 {
 }
 
 h1 {
-	font-size: $defaultFontSize + 20px;
+	font-size: $default-font-size + 20px;
 }
 
 h2 {
-	font-size: $defaultFontSize + 14px;
+	font-size: $default-font-size + 14px;
 }
 
 h3 {
-	font-size: $defaultFontSize + 10px;
+	font-size: $default-font-size + 10px;
 }
 
 h4 {
-	font-size: $defaultFontSize + 6px;
+	font-size: $default-font-size + 6px;
 }
 
 h5 {
-	font-size: $defaultFontSize + 4px;
+	font-size: $default-font-size + 4px;
 }
 
 h6 {
-	font-size: $defaultFontSize + 2px;
+	font-size: $default-font-size + 2px;
 }
 
 ul {
-	margin: 0 0 $baseUnit $baseUnit;
+	margin: 0 0 $base-unit $base-unit;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -139,20 +143,20 @@ ul {
 a, .link {
 	margin: 0;
 	padding: 0;
-	color: $colorPrimary;
+	color: $color-primary;
 	cursor: pointer !important;
 	text-decoration: none;
 
 	&:hover, &:focus {
-		color: $colorPrimaryDark;
+		color: $color-primary-dark;
 		text-decoration: underline;
 	}
 
 	&.secondary {
-		color: $colorSecondary;
+		color: $color-secondary;
 
 		&:hover, &:focus {
-			color: $colorSecondaryDark;
+			color: $color-secondary-dark;
 			text-decoration: underline;
 		}
 	}

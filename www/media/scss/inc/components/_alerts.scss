@@ -1,22 +1,22 @@
 .alert {
-	@include roundedCorners(3px);
+	@include rounded-corners(3px);
 
-	min-height: $doubleUnit;
-	background: $alertWarning;
+	min-height: $double-unit;
+	background: $alert-warning;
 	color: $white;
-	margin: 0 0 $baseUnit 0;
+	margin: 0 0 $base-unit 0;
 
 	p {
 		margin: 0 !important;
-		padding: $halfUnit ($halfUnit + 3px) !important;
-		line-height: $baseUnit;
+		padding: $half-unit ($half-unit + 3px) !important;
+		line-height: $base-unit;
 	}
 
 	&.success {
-		background: $alertSuccess;
+		background: $alert-success;
 	}
 
 	&.error {
-		background: $alertError;
+		background: $alert-error;
 	}
 }

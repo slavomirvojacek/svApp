@@ -6,4 +6,4 @@ global $app;
 
 <h2>The page you requested could not be found :-(</h2>
 
-<p><a href="<?php echo Template\Url::href( array($app["welcomePage"]) ); ?>" class="button buttonPrimary inverted">Go to homepage</a></p>
+<p><a href="<?php echo Template\Url::href( array($app["welcomePage"]) ); ?>" class="button button-primary inverted">Go to homepage</a></p>
