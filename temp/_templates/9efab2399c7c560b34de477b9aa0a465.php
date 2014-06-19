@@ -14,9 +14,7 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon-precomposed" href="/screenIcon.png">
 
-	<script src="/www/media/js/jquery.js"></script>
-	<?php echo( (isset($template["page"]["scripts"]) && is_array($template["page"]["scripts"])) ? Template\jsCompile::compile($template["page"]["scripts"]) : ""
-	); ?>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
   </head>
 
@@ -33,5 +31,7 @@
 	<?php Template\Template::getModule(" footer "); ?>
 
 	<?php echo( DEBUG ? Utilities\Debug::getStats() : "" ); ?>
+
+	<?php echo( (isset($template["page"]["scripts"]) && is_array($template["page"]["scripts"])) ? Template\jsCompile::compile($template["page"]["scripts"]) : "" ); ?>
 	</body>
 </html>
