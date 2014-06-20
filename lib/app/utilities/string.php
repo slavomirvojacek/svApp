@@ -49,7 +49,7 @@ class String
 	 * @param string $r
 	 * @return string
 	 */
-	public static function sanWhitespace($s, $r)
+	public static function sanWhitespace($s, $r = "-")
 	{
 		return preg_replace('/\s+/', $r, $s);
 	}

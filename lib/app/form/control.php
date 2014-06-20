@@ -25,12 +25,6 @@ class Control
 	private $a_m = array("post", "get");
 
 	/**
-	 * Allowed form enctypes
-	 * @var array
-	 */
-	private $a_e = array("multipart/form-data", false);
-
-	/**
 	 * Form ID
 	 * @var string
 	 */
@@ -91,7 +85,7 @@ class Control
 	 */
 	public function __construct($m, $id, $cl = false, $e = false, $ac = true)
 	{
-		if (empty($id) || !in_array($m, $this->a_m) || !in_array($e, $this->a_e)) {
+		if (empty($id) || !in_array($m, $this->a_m) || !is_bool($e)) {
 			Debug::err(new inputException(__METHOD__));
 		}
 
@@ -101,18 +95,8 @@ class Control
 		$this->textareas = array();
 		$this->buttons = array();
 
-		$this->html = "";
-		$this->html .= '<form' . (!$ac ? ' autocomplete="off"' : '') . ($cl ? ' class="' . $cl . '"' : "") . ' method="' . $m . '" id="form-' . strtolower($this->id) . '"' . ($e ? ' enctype="' . $e . '"' : '') . '>' . BR;
+		$this->html = '<form' . (!$ac ? ' autocomplete="off"' : '') . ($cl ? ' class="' . $cl . '"' : "") . ' method="' . $m . '" id="form-' . strtolower($this->id) . '"' . ($e ? ' enctype="multipart/form-data"' : '') . '>' . BR;
 		$this->html .= '<div class="flash-message"></div>' . BR;
-	}
-
-	public function __destruct()
-	{
-		$this->id = "";
-		$this->inputs = "";
-		$this->selects = "";
-		$this->textareas = "";
-		$this->buttons = "";
 	}
 
 	/**
@@ -256,10 +240,7 @@ class Control
 		$r .= $rule ? ' ' . self::parseRules($rule) : '';
 		$r .= '>' . BR;
 
-		if ($this->nameExists($n)) {
-			Debug::err(new appException("This name ($n) already exists in current form"));
-			return false;
-		}
+		$this->nameExists($n);
 
 		$this->inputs[$n] = $rule;
 		$this->html .= $r;
@@ -300,10 +281,7 @@ class Control
 		}
 		$r .= '</select>' . BR;
 
-		if ($this->nameExists($n)) {
-			Debug::err(new appException("This name ($n) already exists in current form"));
-			return false;
-		}
+		$this->nameExists($n);
 
 		$this->selects[$n] = array("rule" => $rule, "options" => $d);
 		$this->html .= $r;
@@ -337,10 +315,7 @@ class Control
 		$r .= $v ? String::san($v) : '';
 		$r .= '</textarea>' . BR;
 
-		if ($this->nameExists($n)) {
-			Debug::err(new appException("This name ($n) already exists in current form"));
-			return false;
-		}
+		$this->nameExists($n);
 
 		$this->textareas[$n] = $rule;
 		$this->html .= $r;
@@ -366,10 +341,7 @@ class Control
 		$r .= String::san($v);
 		$r .= '</button>' . BR;
 
-		if ($this->nameExists($n)) {
-			Debug::err(new appException("This name ($n) already exists in current form"));
-			return false;
-		}
+		$this->nameExists($n);
 
 		$this->buttons[$n] = true;
 		$this->html .= $r;
@@ -401,10 +373,7 @@ class Control
 		$r .= '<input type="hidden" name="MAX_FILE_SIZE" value="' . (int) $max . '">';
 		$r .= '</div>' . BR;
 
-		if ($this->nameExists($n)) {
-			Debug::err(new appException("This name ($n) already exists in current form"));
-			return false;
-		}
+		$this->nameExists($n);
 
 		$this->inputs["UPLOAD_IDENTIFIER"] = $rule;
 		$this->inputs["MAX_FILE_SIZE"] = $rule;
@@ -421,10 +390,10 @@ class Control
 	private function nameExists($n)
 	{
 		if (in_array($n, array_keys($this->inputs)) || in_array($n, array_keys($this->textareas)) || in_array($n, array_keys($this->selects)) || in_array($n, array_keys($this->buttons))) {
-			return true;
+			Debug::err(new appException("The name $n already exists in current form"));
 		}
 
-		return false;
+		return true;
 	}
 
 }
