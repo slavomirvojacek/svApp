@@ -76,11 +76,11 @@ $(document).ready(function() {
 	 */
 	$("button").click(function() {
 		var form = $(this).parent();
-		var flash-message = $(form).find(".flash-message");
+		var flashMessage = $(form).find(".flash-message");
 		var inputs = form.find(":input");
 		var r;
 
-		flash-message.addClass('show');
+		flashMessage.addClass('show');
 
 		inputs.each(function() {
 			var dataRule = $(this).attr("data-rule");
@@ -112,11 +112,11 @@ $(document).ready(function() {
 		});
 
 		if (!isUndefined(r)) {
-			flash-message.html('<div class="alert warning"><p>' + r + '</p></div>');
+			flashMessage.html('<div class="alert warning"><p>' + r + '</p></div>');
 			return false;
 		}
 
-		flash-message.html("");
+		flashMessage.html("");
 	});
 
 });
