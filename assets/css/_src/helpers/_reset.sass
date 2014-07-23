@@ -1,0 +1,125 @@
+*
+	+box-sizing(border-box)
+
+html,body, div, span, object, iframe, hr,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, b, sub, sup, var, i, em,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, button, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	outline: 0
+	font-family: $default-font-family
+	font-weight: normal
+	vertical-align: baseline
+
+html,
+body
+	min-height: 100%
+	line-height: $base-unit
+	font-size: $default-font-size
+	color: $black
+
+article, aside, footer, header, menu, nav, section
+	display: block
+
+table, tbody, tr, th, td
+	border-collapse: collapse
+	font-size: $default-font-size
+
+nav ul
+	list-style: none
+
+mark
+	background-color: #ff9
+	color: $black
+	font-weight: bold
+
+del
+	text-decoration: line-through
+
+abbr, dfn
+	border-bottom: 1px dotted
+	cursor: help
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+hr
+	display: block
+	height: 1px
+	border-top: 1px solid #eee
+	margin: $base-unit 0
+
+strong, b
+	font-weight: bold
+
+em, i
+	font-style: italic
+
+p
+	margin: $half-unit 0
+	&:last-child
+		margin-bottom: 0
+
+h1, h2, h3
+	margin: $double-unit 0 $base-unit
+	line-height: $double-unit
+	&:first-of-type
+		margin-top: 0
+	&:last-child
+		margin-bottom: 0
+
+h4, h5, h6
+	margin: $base-unit 0 $half-unit
+	line-height: $double-half-unit
+	&:last-child
+		margin-bottom: 0
+
+h1
+	font-size: $default-font-size + 20px
+
+h2
+	font-size: $default-font-size + 14px
+
+h3
+	font-size: $default-font-size + 10px
+
+h4
+	font-size: $default-font-size + 6px
+
+h5
+	font-size: $default-font-size + 4px
+
+h6
+	font-size: $default-font-size + 2px
+
+ul
+	margin: 0 0 $base-unit $base-unit
+	&:last-child
+		margin-bottom: 0
+
+a, .link
+	margin: 0
+	padding: 0
+	color: $color-primary
+	cursor: pointer !important
+	text-decoration: none
+	&:hover, &:focus
+		color: $color-primary-dark
+		text-decoration: underline
+	&.secondary
+		color: $color-secondary
+		&:hover, &:focus
+			color: $color-secondary-dark
+			text-decoration: underline
+	&.inverted
+		color: $white !important
