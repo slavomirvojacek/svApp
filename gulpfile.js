@@ -6,10 +6,6 @@ var gulp =
 	sass = require("gulp-ruby-sass"),
 	autoprefixer = require("gulp-autoprefixer"),
 	uglify = require("gulp-uglify"),
-	git = require('gulp-git');
-
-var exec = require("child_process").exec;
-var shellescape = require('shell-escape');
 
 
 /*
