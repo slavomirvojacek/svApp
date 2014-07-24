@@ -206,7 +206,7 @@ noscript #warning {
     opacity: 1; }
 
 #debug-grid {
-  background: url("/www/media/images/other/grid.png") repeat left top transparent;
+  background: url("/assets/images/other/grid.png") repeat left top transparent;
   width: 991px;
   position: absolute;
   left: 50%;
@@ -217,7 +217,7 @@ noscript #warning {
   margin: 0 0 -495px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx) {
     #debug-grid {
-      background-image: url("/www/media/images/other/gridRetina.png");
+      background-image: url("/assets/images/other/gridRetina.png");
       -webkit-background-size: 22px 22px;
               background-size: 22px 22px; } }
 
@@ -292,12 +292,12 @@ select {
   min-width: 220px;
   max-width: 242px;
   padding: 0 44px 0 11px;
-  background-image: url("/www/media/images/other/arrowSelect.png");
+  background-image: url("/assets/images/other/arrowSelect.png");
   background-repeat: no-repeat;
   background-position: right 14px top 20px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx) {
     select {
-      background-image: url("/www/media/images/other/arrowSelectRetina.png");
+      background-image: url("/assets/images/other/arrowSelectRetina.png");
       -webkit-background-size: 16px 8px;
               background-size: 16px 8px; } }
 
@@ -357,7 +357,7 @@ textarea:invalid {
     margin: 0; }
 
 .flash-message {
-  background: url("/www/media/images/other/loading.gif") no-repeat center center transparent;
+  background: url("/assets/images/other/loading.gif") no-repeat center center transparent;
   -webkit-background-size: 22px 22px;
           background-size: 22px 22px;
   min-height: 44px;
@@ -365,7 +365,7 @@ textarea:invalid {
   margin: 0 0 22px; }
   @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx) {
     .flash-message {
-      background-image: url("/www/media/images/other/loadingRetina.gif"); } }
+      background-image: url("/assets/images/other/loadingRetina.gif"); } }
 
 footer p {
   color: #999999;

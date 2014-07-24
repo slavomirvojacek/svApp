@@ -10,7 +10,7 @@
 
 	<title>{{ page.title|capitalise }} / {{ app.siteName }}</title>
 
-	<link rel="stylesheet" href="/www/media/css/screen.css">
+	<link rel="stylesheet" href="/assets/css/screen.css">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon-precomposed" href="/screenIcon.png">
 

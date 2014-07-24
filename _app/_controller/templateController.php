@@ -29,7 +29,7 @@ class templateController
 	 */
 	public function parseParam($dbe = false)
 	{
-		$f = APP_DIR . "/www/app/template/" . $this->page["url"]["template"] . "/_param_" . $this->page["url"]["param"] . ".lt";
+		$f = WWW_APP_DIR . "/template/" . $this->page["url"]["template"] . "/_param_" . $this->page["url"]["param"] . ".lt";
 
 		if (is_file($f) && file_exists($f)) {
 			return true;
@@ -60,7 +60,7 @@ class templateController
 	 */
 	public function parseExtra($a = false, $dbe = false)
 	{
-		$f = APP_DIR . "/www/app/template/" . $this->page["url"]["template"] . "/_extra_" . $this->page["url"]["extra"] . ".lt";
+		$f = WWW_APP_DIR . "/template/" . $this->page["url"]["template"] . "/_extra_" . $this->page["url"]["extra"] . ".lt";
 
 		if (is_file($f) && file_exists($f)) {
 			return true;
