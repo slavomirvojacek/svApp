@@ -8,7 +8,7 @@ A light-weight & easy-to-learn Model-View-Controller framework built to simplify
 
 ### Prerequisites
 
-First off, please make sure that you have the latest node.js (http://nodejs.org/) installed on your machine, as to run svApp's SASS and JS compilation on save, gulp.js (http://gulpjs.com/)is required both globally
+First off, please make sure that you have the latest node.js (http://nodejs.org/) installed on your machine, as to run svApp's SASS and JS compilation on save, gulp.js (http://gulpjs.com/) is required both globally
 
 **npm install -g gulp**
 
