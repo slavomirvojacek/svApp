@@ -1,5 +1,4 @@
-#svApp
-=====
+![logo220](https://cloud.githubusercontent.com/assets/4658565/2871400/26300ca4-d309-11e3-85c9-b893c24e961f.png)
 
 A light-weight & easy-to-learn Model-View-Controller framework built to simplify and speed up the production process of your PHP applications. It takes care of the logic and helps you maintain consistency throughout your projects.
 
