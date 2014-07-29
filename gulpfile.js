@@ -28,8 +28,13 @@ gulp.task("sass", function() {
 gulp.task("uglify", function() {
 
 	gulp.src("assets/js/_src/*.js")
-		.pipe(concat("assets/js/app.js"))
-		.pipe(uglify("assets/js/app.js"))
+		.pipe(uglify())
+		.pipe(gulp.dest("assets/js")
+	);
+
+	gulp.src("assets/js/_src/*.js")
+		.pipe(concat("app.js"))
+		.pipe(uglify("app.js"))
 		.pipe(gulp.dest("assets/js")
 	);
 
