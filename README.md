@@ -37,4 +37,4 @@ To deploy all *.sass* and *.js* assets on filechange, run
 in your www directory (where *gulpfile.js* is located).
 
 =====
-Documentation coming soon
+## Documentation
