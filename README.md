@@ -36,5 +36,15 @@ To deploy all *.sass* and *.js* assets on filechange, run
 
 in your www directory (where *gulpfile.js* is located).
 
-=====
 ## Documentation
+
+### Creating your first svApp application
+
+#### What is MVC?
+#### What is Model?
+#### What is Controller?
+#### What is View?
+
+### Deploying your application
+
+#### Application Assets and Dependencies
