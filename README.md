@@ -6,16 +6,13 @@ A light-weight & easy-to-learn Model-View-Controller framework built to simplify
 
 ### Prerequisites
 
-First off, please make sure that you have the latest node.js (http://nodejs.org/) installed on your machine, as to run svApp's SASS and JS compilation on save, gulp.js (http://gulpjs.com/) is required both globally
+First off, please make sure that you have the latest node.js (http://nodejs.org/) installed on your machine, as to run svApp's SASS and JS compilation on save, gulp.js (http://gulpjs.com/) is required both globally:
 
 **sudo npm install gulp -g**
 
-and locally
+and locally (in your *www root*, where *gulpfile.js* is located) with all dependencies:
 
 **sudo npm install gulp**
-
-with all dependencies
-
 **sudo npm install gulp-ruby-sass gulp-autoprefixer gulp-uglify gulp-concat**
 
 To run svApp, you will need an Apache server with PHP 5.4.0+ running.
@@ -34,7 +31,7 @@ To deploy all *.sass* and *.js* assets on filechange, run
 
 **gulp**
 
-in your www directory (where *gulpfile.js* is located).
+in your *www root* (where *gulpfile.js* is located).
 
 ## Documentation
 
