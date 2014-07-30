@@ -13,6 +13,7 @@ First off, please make sure that you have the latest node.js (http://nodejs.org/
 and locally (in your *www root*, where *gulpfile.js* is located) with all dependencies:
 
 **sudo npm install gulp**
+
 **sudo npm install gulp-ruby-sass gulp-autoprefixer gulp-uglify gulp-concat**
 
 To run svApp, you will need an Apache server with PHP 5.4.0+ running.
