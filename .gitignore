@@ -2,6 +2,7 @@
 error_log
 
 /node_modules
+/_DESIGN
 
 .DS_Store
 .Spotlight-V100
