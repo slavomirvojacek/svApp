@@ -1,0 +1,23 @@
+.button, button
+	+border-radius(4px)
+	+transition()
+	@extend .text-uppercase
+
+	font-size: rem(16px)
+	padding: rem($base-unit-layout)
+	background: $colour-white
+	color: $colour-grey-dark
+	border: 4px solid $colour-grey-light
+	text-decoration: none
+	cursor: pointer !important
+
+	+hover()
+		border-color: $colour-grey
+
+	&.primary
+		background: $colour-primary
+		color: $colour-white
+		border-color: $colour-primary-light
+
+		+hover()
+			border-color: $colour-primary

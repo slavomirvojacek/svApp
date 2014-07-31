@@ -42,7 +42,7 @@ gulp.task("uglify", function() {
 
 gulp.task("watch", function() {
 
-	gulp.watch("assets/css/_src/*/*.sass", ["sass"]);
+	gulp.watch("assets/css/_src/**/*.sass", ["sass"]);
 	gulp.watch("assets/js/_src/*.js", ["uglify"]);
 
 });
