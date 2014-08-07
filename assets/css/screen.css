@@ -172,7 +172,7 @@ a, .link {
 .text-lowercase {
   text-transform: lowercase; }
 
-.block-center {
+.block-center, .container-full-screen {
   margin-left: auto;
   margin-right: auto; }
 
@@ -204,3 +204,21 @@ a, .link {
 
 .clearfix {
   clear: both; }
+
+.container-full-screen {
+  zoom: 1;
+  width: 90%; }
+  .container-full-screen:before, .container-full-screen:after {
+    content: "";
+    display: table; }
+  .container-full-screen:after {
+    clear: both; }
+
+.page-css .container-full-screen .pull-left, .page-css .container-full-screen .pull-right {
+  width: 50%;
+  padding: 0 1rem 0 0; }
+  .page-css .container-full-screen .pull-left.pull-right, .page-css .container-full-screen .pull-right.pull-right {
+    padding: 0 0 0 1rem; }
+.page-css .container-full-screen .section-headline {
+  font-size: 1.875rem;
+  border-bottom: 1px solid #eaeaea; }

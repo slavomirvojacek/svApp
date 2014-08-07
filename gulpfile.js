@@ -6,7 +6,8 @@ var gulp =
 	sass = require("gulp-ruby-sass"),
 	autoprefixer = require("gulp-autoprefixer"),
 	uglify = require("gulp-uglify"),
-	concat = require("gulp-concat");
+	concat = require("gulp-concat"),
+	notify = require("gulp-notify");
 
 
 /*
@@ -20,8 +21,8 @@ gulp.task("sass", function() {
 			style: "nested"
 		}))
 		.pipe(autoprefixer("last 2 version", "> 1%"))
-		.pipe(gulp.dest("assets/css")
-	);
+		.pipe(gulp.dest("assets/css"))
+		.pipe(notify("SASS successfully compiled!"));
 
 });
 
@@ -29,14 +30,13 @@ gulp.task("uglify", function() {
 
 	gulp.src("assets/js/_src/*.js")
 		.pipe(uglify())
-		.pipe(gulp.dest("assets/js")
-	);
+		.pipe(gulp.dest("assets/js"));
 
 	gulp.src("assets/js/_src/*.js")
 		.pipe(concat("app.js"))
 		.pipe(uglify("app.js"))
-		.pipe(gulp.dest("assets/js")
-	);
+		.pipe(gulp.dest("assets/js"))
+		.pipe(notify("JavaScript successfully compiled!"));
 
 });
 

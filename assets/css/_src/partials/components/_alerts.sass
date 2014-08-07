@@ -1,0 +1,18 @@
+.alert
+	+border-radius(4px)
+
+	padding: $base-unit-layout
+	background: $color-alert-warning
+	color: darken($color-alert-warning, 7.5%)
+	border: 1px solid darken($color-alert-warning, 7.5%)
+	margin: 0 0 $base-unit-layout 0
+	line-height: 1.5
+
+	&.success
+		background: $color-alert-success
+		color: darken($color-alert-success, 7.5%)
+		border: 1px solid darken($color-alert-success, 7.5%)
+	&.error
+		background: $color-alert-error
+		color: darken($color-alert-error, 7.5%)
+		border: 1px solid darken($color-alert-error, 7.5%)

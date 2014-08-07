@@ -1,0 +1,16 @@
+.close
+	@extend .text-center
+	+position(absolute, 0 0 null null)
+
+	width: $base-unit-layout
+	height: $base-unit-layout
+	line-height: $base-unit-layout
+	opacity: .65
+	cursor: pointer
+	color: $color-grey
+	text-decoration: none
+	font-weight: bold
+	content: "\&times;"
+
+	+hover
+		opacity: 1
