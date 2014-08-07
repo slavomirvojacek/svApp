@@ -1,6 +1,3 @@
-+placeholder
-	color: $color-grey
-
 input,
 select,
 textarea,
@@ -8,36 +5,51 @@ button,
 .button,
 .input
 	+box-shadow(none)
-	+rounded-corners(3px)
+	+border-radius(4px)
+	+transition()
+
+	+placeholder
+		color: $color-grey-light
+
+	border: 1px solid $color-grey-light
 	background: white
-	padding: $half-layout-unit
-	font-family: $default-font-family !important
-	font-size: $default-font-size
-	border: none
+	padding: rem(12px)
+	font-family: $font-family-primary !important
+	font-size: rem(14px)
 	outline: none
-	color: $color-grey
-	margin: 0 0 $base-unit-unit
+	color: $color-grey-dark
+	margin: 0 0 $base-unit-layout
 	text-decoration: none
-	min-width: 220px
+
+	+hover()
+		+box-shadow(0 1px 3px rgba(0,0,0,.075)) // This should not be black
+
+		border-color: $color-grey
 
 select
 	-webkit-appearance: none
 	background-image: url("#{$image-base}/other/arrowSelect.png")
 	background-repeat: no-repeat
 	background-position: right 14px top 20px
+	min-width: $double-unit-layout * 10
+
+input
+	min-width: $double-unit-layout * 10
 
 textarea
-	min-height: $triple-unit-layout
+	min-width: $double-unit-layout * 10
+	min-height: $quadruple-unit-layout
 	resize: vertical
 
 input:invalid,
 textarea:invalid
-	color: $alert-error
+	color: $color-alert-error
+	border-color: $color-alert-error
 
 .file-button
 	position: relative
 	overflow: hidden
-	margin: 0 0 $base-unit-unit
+	margin: 0 0 $base-unit-layout
 	input[type="file"]
 		@extend .wipe-margin-padding
 		position: absolute
@@ -54,6 +66,6 @@ textarea:invalid
 .flash-message
 	background: url("#{$image-base}/other/loading.gif") no-repeat center center transparent
 	background-size: 22px 22px
-	min-height: $double-unit
+	min-height: $double-unit-layout
 	display: none
-	margin: 0 0 $base-unit
+	margin: 0 0 $base-unit-layout

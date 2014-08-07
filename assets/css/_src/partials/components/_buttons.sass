@@ -1,23 +1,23 @@
 .button, button
-	+border-radius(4px)
-	+transition()
 	@extend .text-uppercase
 
-	font-size: $base-unit-font-size
-	padding: $base-unit-layout
-	background: $color-white
-	color: $color-grey-dark
-	border: 4px solid $color-grey-light
+	background: white
 	text-decoration: none
-	cursor: pointer !important
+	padding-left: $double-half-unit-layout
+	padding-right: $double-half-unit-layout
+	cursor: pointer
+	border-color: $color-grey
 
 	+hover()
-		border-color: $color-grey
+		+box-shadow(0 1px 2px rgba(0,0,0,.125)) // This should not be black
+
+		border-color: $color-primary
+		color: $color-primary
 
 	&.primary
-		background: $color-primary
-		color: $color-white
-		border-color: $color-primary-light
+		border-color: $color-primary
+		color: $color-primary
 
-		+hover()
-			border-color: $color-primary
+	&.secondary
+		border-color: $color-secondary
+		color: $color-secondary

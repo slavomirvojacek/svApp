@@ -1,5 +1,6 @@
-// TODO documentation
-$rem-base = 16px
+// This is the px value of the main unit - rem base - on which all sizing and
+// layout depends. Every single rem value is calculated using this value.
+$rem-base: 16px
 
 
 // This is the basic font-size unit. It has been set to 16px because most
@@ -19,6 +20,8 @@ $base-unit-line-height: 1.5
 // is to increase consistency throughout the whole visual feel
 $base-unit-layout: rem($rem-base)
 
+
+// These are the different unit proportions derived from the base layout unit.
 $quarter-unit-layout: rem($rem-base / 4)
 $half-unit-layout: rem($rem-base / 2)
 $double-half-unit-layout: rem($rem-base * 1.5)
