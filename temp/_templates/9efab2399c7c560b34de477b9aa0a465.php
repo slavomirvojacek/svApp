@@ -10,14 +10,13 @@
 
 	<title><?php echo( $template["page"]["title"] ); ?> / <?php echo( $template["app"]["siteName"] ); ?></title>
 
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Karma:400,300' rel='stylesheet' type='text/css'>
-
 	<link rel="stylesheet" href="/assets/css/screen.css">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon-precomposed" href="/screenIcon.png">
 
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+	<script src="/assets/js/app.js" type="text/javascript"></script>
 
   </head>
 
@@ -25,7 +24,7 @@
 
 	<noscript>
 		<div id="warning">
-			<p>To be able to experience <?php echo( $template["app"]["siteName"] ); ?> with all its features, you need a browser that supports JavaScript, and it <strong>needs to be enabled.</strong></p>
+			To be able to experience <?php echo( $template["app"]["siteName"] ); ?> with all its features, you need a browser that supports JavaScript, and it <strong>needs to be enabled.</strong>
 		</div>
 	</noscript>
 

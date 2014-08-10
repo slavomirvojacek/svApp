@@ -15,9 +15,9 @@ var gulp =
  */
 gulp.task("sass", function() {
 
-	gulp.src("assets/css/_src/screen.sass")
+	gulp.src("assets/css/include/screen.sass")
 		.pipe(sass({
-			loadPath: process.cwd() + "/assets/css/_src",
+			loadPath: process.cwd() + "/assets/css/include",
 			style: "nested"
 		}))
 		.pipe(autoprefixer("last 2 version", "> 1%"))
@@ -28,11 +28,11 @@ gulp.task("sass", function() {
 
 gulp.task("uglify", function() {
 
-	gulp.src("assets/js/_src/*.js")
+	gulp.src("assets/js/include/*.js")
 		.pipe(uglify())
 		.pipe(gulp.dest("assets/js"));
 
-	gulp.src("assets/js/_src/*.js")
+	gulp.src("assets/js/include/*.js")
 		.pipe(concat("app.js"))
 		.pipe(uglify("app.js"))
 		.pipe(gulp.dest("assets/js"))
@@ -42,8 +42,8 @@ gulp.task("uglify", function() {
 
 gulp.task("watch", function() {
 
-	gulp.watch("assets/css/_src/**/*.sass", ["sass"]);
-	gulp.watch("assets/js/_src/*.js", ["uglify"]);
+	gulp.watch("assets/css/include/**/*.sass", ["sass"]);
+	gulp.watch("assets/js/include/*.js", ["uglify"]);
 
 });
 

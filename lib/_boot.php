@@ -5,7 +5,7 @@ include "__check.php";
 define("DEBUG", true);
 define("GRID", false);
 
-define("WWW_APP_DIR", APP_DIR . "/_app");
+define("WWW_APP_DIR", APP_DIR . "/app");
 define("UPLOAD_DIR", APP_DIR . "/temp");
 define("BR", PHP_EOL);
 
